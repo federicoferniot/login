@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Usuario} from '../../model/usuario'
 import { Router } from '@angular/router';
+import { AuthService } from  '../../auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   public usuario: Usuario;
 
-  constructor(private router:Router) {
+  constructor(private router:Router, private authService: AuthService) {
     this.usuario = new Usuario();
    }
 
@@ -19,12 +20,11 @@ export class LoginComponent implements OnInit {
   }
 
   ingresar(){
-    if(this.usuario.nombre!=null && this.usuario.clave!=null){
+    this.authService.login(this.usuario.nombre, this.usuario.clave).then(res => {
       this.router.navigate(['bienvenido']);
-    }
-    else{
+    }).catch(error => {
       this.router.navigate(['error']);
-    }
+    })
   }
 
 }

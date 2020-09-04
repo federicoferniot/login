@@ -1,9 +1,13 @@
 <div class='container'>
-    <div class='row'>
-        <div class="col-md-5">
-            <input type='text' class="form-control" [(ngModel)]='usuario.nombre'>
-            <input type='text' class="form-control" [(ngModel)]='usuario.clave'>
-            <button class='btn btn-primary' (click)='ingresar()'>Ingresar</button>
-        </div>
-    </div>
+    <mat-form-field appearance="outline">
+        <mat-label>Usuario</mat-label>
+        <input matInput [(ngModel)]='usuario.nombre'>
+        <mat-hint>feder.fer.93@gmail.com</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]='usuario.clave'>
+        <mat-hint>fedezxr37</mat-hint>
+    </mat-form-field>
+    <button class='btn btn-primary' (click)='ingresar()'>Ingresar</button>
 </div>
