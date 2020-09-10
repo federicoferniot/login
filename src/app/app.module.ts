@@ -4,6 +4,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { LoginComponent } from './components/login/login.component';
 import { ErrorComponent } from './components/error/error.component';
 import { BienvenidoComponent } from './components/bienvenido/bienvenido.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ControlEntidadComponent } from './components/control-entidad/control-entidad.component';
+import { ListadoEntidadComponent } from './components/listado-entidad/listado-entidad.component';
 
 var config = {
   apiKey: "AIzaSyDrLUL-SiiyAvn2pppCY_GZfiLgahSGtUY",
@@ -29,13 +32,16 @@ var config = {
     AppComponent,
     LoginComponent,
     ErrorComponent,
-    BienvenidoComponent
+    BienvenidoComponent,
+    ControlEntidadComponent,
+    ListadoEntidadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,
+    HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
     AngularFireModule.initializeApp(config),
