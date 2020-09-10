@@ -8,6 +8,7 @@
             <th>Apellido</th>
             <th>Fecha Nacimiento</th>
             <th>Foto</th>
+            <th>Accion</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +21,9 @@
             <td>{{elem.FechaNac}}</td>
             <td>
                 <img [src]="elem.FotoPerfil">
+            </td>
+            <td>
+                <button (click)="ver(elem)" >Ver</button>
             </td>
         </tr>
     </tbody>

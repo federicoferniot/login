@@ -14,4 +14,8 @@ export class ListadoEntidadComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ver(elem){
+    console.log(elem);
+  }
+
 }
