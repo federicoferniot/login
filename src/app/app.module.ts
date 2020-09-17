@@ -5,6 +5,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { HttpClientModule } from '@angular/common/http';
+import {TableModule} from 'primeng/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { BienvenidoComponent } from './components/bienvenido/bienvenido.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ControlEntidadComponent } from './components/control-entidad/control-entidad.component';
 import { ListadoEntidadComponent } from './components/listado-entidad/listado-entidad.component';
+import { DetalleEntidadComponent } from './components/detalle-entidad/detalle-entidad.component';
+import { BotonEntidadComponent } from './components/boton-entidad/boton-entidad.component';
 
 var config = {
   apiKey: "AIzaSyDrLUL-SiiyAvn2pppCY_GZfiLgahSGtUY",
@@ -34,7 +37,9 @@ var config = {
     ErrorComponent,
     BienvenidoComponent,
     ControlEntidadComponent,
-    ListadoEntidadComponent
+    ListadoEntidadComponent,
+    DetalleEntidadComponent,
+    BotonEntidadComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,8 @@ var config = {
     MatInputModule,
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

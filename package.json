@@ -17,7 +17,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.0.14",
-    "@angular/cdk": "^10.2.0",
+    "@angular/cdk": "^10.2.1",
     "@angular/common": "~10.0.14",
     "@angular/compiler": "^10.0.14",
     "@angular/compiler-cli": "~10.0.14",
@@ -32,7 +32,8 @@
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
     "bootstrap": "^4.5.0",
     "express": "^4.17.1",
-    "firebase": "^7.19.1",
+    "firebase": "^7.21.0",
+    "primeng": "^10.0.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "typescript": "~3.9.5",

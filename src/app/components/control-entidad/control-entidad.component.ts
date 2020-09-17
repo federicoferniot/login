@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { UsuariosService } from 'src/app/servicios/usuarios.service'
 
 @Component({
@@ -7,16 +8,25 @@ import { UsuariosService } from 'src/app/servicios/usuarios.service'
   styleUrls: ['./control-entidad.component.css']
 })
 export class ControlEntidadComponent implements OnInit {
+  subscription: Subscription;
+
+  usuarioParaMostrar;
 
   list = [];
+  listBorrados = [];
 
   constructor(private usuariosService: UsuariosService) { }
 
   ngOnInit(): void {
-    this.usuariosService.obtenerUsuarios().subscribe((usuarios: any) => {
-      this.list = usuarios;
-    }, error => {
-      console.log(error);
-    });
+    this.subscription = this.usuariosService.getNotification().subscribe( data => {
+      if(data){
+        this.list = this.usuariosService.obtenerUsuarios();
+        this.listBorrados = this.usuariosService.obtenerEliminados();
+      }
+    })
+  }
+
+  tomarUsuarioDetalle(usuario){
+    this.usuarioParaMostrar = usuario;
   }
 }

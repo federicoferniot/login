@@ -1,5 +1,5 @@
-<table class="table table-striped">
-    <thead>
+<p-table [value]="listado">
+    <ng-template pTemplate="header">
         <tr>
             <th>Id</th>
             <th>Sexo</th>
@@ -10,9 +10,9 @@
             <th>Foto</th>
             <th>Accion</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let elem of listado">
+    </ng-template>
+    <ng-template pTemplate="body" let-elem>
+        <tr>
             <td>{{elem.id}}</td>
             <td>{{elem.Sexo}}</td>
             <td>{{elem.email}}</td>
@@ -20,11 +20,11 @@
             <td>{{elem.Apellido}}</td>
             <td>{{elem.FechaNac}}</td>
             <td>
-                <img [src]="elem.FotoPerfil">
+                <img class="tabla-img" [src]="elem.FotoPerfil">
             </td>
             <td>
                 <button (click)="ver(elem)" >Ver</button>
             </td>
         </tr>
-    </tbody>
-</table>
+    </ng-template>
+</p-table>

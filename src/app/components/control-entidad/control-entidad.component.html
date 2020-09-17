@@ -1,1 +1,17 @@
-<app-listado-entidad [listado]="list"></app-listado-entidad>
+<div id="container">
+    <div class="row">
+        <div class="col-10">
+            <h1>Listado</h1>
+            <app-listado-entidad [listado]="list" (usuarioSeleccionado)="tomarUsuarioDetalle($event)"></app-listado-entidad>
+        </div>
+        <div class="col-2">
+            <app-detalle-entidad [unUsuario]="usuarioParaMostrar"></app-detalle-entidad>
+        </div>
+        <div class="col-10">
+            <h1>Eliminados</h1>
+            <app-listado-entidad [listado]="listBorrados"></app-listado-entidad> 
+        </div>
+    </div>
+</div>
+
+
