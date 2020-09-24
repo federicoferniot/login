@@ -19,6 +19,10 @@ import { ControlEntidadComponent } from './components/control-entidad/control-en
 import { ListadoEntidadComponent } from './components/listado-entidad/listado-entidad.component';
 import { DetalleEntidadComponent } from './components/detalle-entidad/detalle-entidad.component';
 import { BotonEntidadComponent } from './components/boton-entidad/boton-entidad.component';
+import { AlbumComponent } from './componentes/album/album.component';
+import { RegionesComponent } from './componentes/regiones/regiones.component';
+import { PaisesBanderaComponent } from './componentes/paises-bandera/paises-bandera.component';
+import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.component';
 
 var config = {
   apiKey: "AIzaSyDrLUL-SiiyAvn2pppCY_GZfiLgahSGtUY",
@@ -39,7 +43,11 @@ var config = {
     ControlEntidadComponent,
     ListadoEntidadComponent,
     DetalleEntidadComponent,
-    BotonEntidadComponent
+    BotonEntidadComponent,
+    AlbumComponent,
+    RegionesComponent,
+    PaisesBanderaComponent,
+    DetallePaisComponent
   ],
   imports: [
     BrowserModule,

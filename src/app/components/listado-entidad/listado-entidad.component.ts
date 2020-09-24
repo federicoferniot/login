@@ -16,6 +16,7 @@ export class ListadoEntidadComponent implements OnInit {
   }
 
   ver(elem){
+    console.log("accion");
     this.usuarioSeleccionado.emit(elem);
   }
 
