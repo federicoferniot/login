@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 class="display-3">Listado</h1>
+    <p><a class="btn btn-primary btn-lg" (click)="cambiarVista()" role="button">Cambiar Vista &raquo;</a></p>
+</div>
+<div class="container" *ngIf="isLista">
+    <table class="table" *ngIf="list">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Email</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of list">
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.email}}</td>
+                <td>{{usuario.last_name}}</td>
+                <td><img [src]="usuario.ip_address"></td>
+                <td><button (click)="borrar(usuario)">Borrar</button><button (click)="ver(usuario)">Ver</button><button (click)="editar(usuario)">Editar</button></td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+<div *ngIf="!isLista" class="container">
+  <p *ngFor="let usuario of list">{{usuario.id}} - Email: {{usuario.email}}, Apellido: {{usuario.last_name}}</p>
+</div>

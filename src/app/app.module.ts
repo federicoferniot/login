@@ -23,6 +23,11 @@ import { AlbumComponent } from './componentes/album/album.component';
 import { RegionesComponent } from './componentes/regiones/regiones.component';
 import { PaisesBanderaComponent } from './componentes/paises-bandera/paises-bandera.component';
 import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.component';
+import { PrincipalComponent } from './componentes/principal/principal.component';
+import { ListadoComponent } from './componentes/listado/listado.component';
+import { BorrarComponent } from './componentes/borrar/borrar.component';
+import { DetalleComponent } from './componentes/detalle/detalle.component';
+import { ModificacionComponent } from './componentes/modificacion/modificacion.component';
 
 var config = {
   apiKey: "AIzaSyDrLUL-SiiyAvn2pppCY_GZfiLgahSGtUY",
@@ -47,7 +52,12 @@ var config = {
     AlbumComponent,
     RegionesComponent,
     PaisesBanderaComponent,
-    DetallePaisComponent
+    DetallePaisComponent,
+    PrincipalComponent,
+    ListadoComponent,
+    BorrarComponent,
+    DetalleComponent,
+    ModificacionComponent
   ],
   imports: [
     BrowserModule,
