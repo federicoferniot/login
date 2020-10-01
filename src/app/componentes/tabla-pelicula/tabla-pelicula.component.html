@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 class="display-3">Listado</h1>
+</div>
+<div class="container">
+    <table class="table" *ngIf="list">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Fecha de Estreno</th>
+            <th scope="col">Cantidad de público</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pelicula of list">
+                <td>{{pelicula.id}}</td>
+                <td>{{pelicula.nombre}}</td>
+                <td>{{pelicula.tipo}}</td>
+                <td>{{pelicula.fechaEstreno}}</td>
+                <td>{{pelicula.cantidadPublico}}</td>
+                <td><img [src]="pelicula.fotoPelicula"></td>
+                <td><button (click)="ver(pelicula)">Ver</button></td>
+            </tr>
+        </tbody>
+      </table>
+</div>

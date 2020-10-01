@@ -1,20 +1,21 @@
+import { componentFactoryName } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { BienvenidoComponent } from './components/bienvenido/bienvenido.component';
-import { ErrorComponent } from './components/error/error.component';
-import { ControlEntidadComponent } from './components/control-entidad/control-entidad.component';
-import { AlbumComponent } from './componentes/album/album.component';
-import { PrincipalComponent } from './componentes/principal/principal.component';
+import { ActorAltaComponent } from './componentes/actor-alta/actor-alta.component';
+import { ActorListadoComponent } from './componentes/actor-listado/actor-listado.component';
+import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
+import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
+import { PeliculaAltaComponent } from './componentes/pelicula-alta/pelicula-alta.component';
+import { PeliculasListadoComponent } from './componentes/peliculas-listado/peliculas-listado.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'login'},
-  {path: 'login', component: LoginComponent},
   {path: 'bienvenido', component: BienvenidoComponent},
-  {path: 'error', component: ErrorComponent},
-  {path: 'personas/listado', component: ControlEntidadComponent},
-  {path: 'album', component: AlbumComponent},
-  {path: 'principal', component: PrincipalComponent}
+  {path: 'búsqueda', component: BusquedaComponent},
+  {path: 'peliculas/alta', component: PeliculaAltaComponent},
+  {path: 'actor/alta', component: ActorAltaComponent},
+  {path: 'actor/listado', component: ActorListadoComponent},
+  {path: 'peliculas/listado', component: PeliculasListadoComponent},
+  {path: '', pathMatch: 'full', redirectTo: 'búsqueda'},
 ];
 
 @NgModule({

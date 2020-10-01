@@ -11,23 +11,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { LoginComponent } from './components/login/login.component';
-import { ErrorComponent } from './components/error/error.component';
-import { BienvenidoComponent } from './components/bienvenido/bienvenido.component';
+import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ControlEntidadComponent } from './components/control-entidad/control-entidad.component';
-import { ListadoEntidadComponent } from './components/listado-entidad/listado-entidad.component';
-import { DetalleEntidadComponent } from './components/detalle-entidad/detalle-entidad.component';
-import { BotonEntidadComponent } from './components/boton-entidad/boton-entidad.component';
-import { AlbumComponent } from './componentes/album/album.component';
-import { RegionesComponent } from './componentes/regiones/regiones.component';
-import { PaisesBanderaComponent } from './componentes/paises-bandera/paises-bandera.component';
-import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.component';
-import { PrincipalComponent } from './componentes/principal/principal.component';
-import { ListadoComponent } from './componentes/listado/listado.component';
-import { BorrarComponent } from './componentes/borrar/borrar.component';
-import { DetalleComponent } from './componentes/detalle/detalle.component';
-import { ModificacionComponent } from './componentes/modificacion/modificacion.component';
+import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
+import { PeliculaAltaComponent } from './componentes/pelicula-alta/pelicula-alta.component';
+import { ActorAltaComponent } from './componentes/actor-alta/actor-alta.component';
+import { ActorListadoComponent } from './componentes/actor-listado/actor-listado.component';
+import { PeliculasListadoComponent } from './componentes/peliculas-listado/peliculas-listado.component';
+import { TablaPeliculaComponent } from './componentes/tabla-pelicula/tabla-pelicula.component';
+import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
 
 var config = {
   apiKey: "AIzaSyDrLUL-SiiyAvn2pppCY_GZfiLgahSGtUY",
@@ -42,22 +34,14 @@ var config = {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    ErrorComponent,
     BienvenidoComponent,
-    ControlEntidadComponent,
-    ListadoEntidadComponent,
-    DetalleEntidadComponent,
-    BotonEntidadComponent,
-    AlbumComponent,
-    RegionesComponent,
-    PaisesBanderaComponent,
-    DetallePaisComponent,
-    PrincipalComponent,
-    ListadoComponent,
-    BorrarComponent,
-    DetalleComponent,
-    ModificacionComponent
+    BusquedaComponent,
+    PeliculaAltaComponent,
+    ActorAltaComponent,
+    ActorListadoComponent,
+    PeliculasListadoComponent,
+    TablaPeliculaComponent,
+    DetallePeliculaComponent
   ],
   imports: [
     BrowserModule,
