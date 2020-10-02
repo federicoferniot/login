@@ -12,14 +12,17 @@ export class PeliculasService {
     return this.db.collection('peliculas').get();
   }
 
-  public guardar(pelicula){
-    return this.db.collection('peliculas').add({
-      id: pelicula.id,
-      nombre: pelicula.nombre,
-      tipo: pelicula.tipo,
-      fechaEstreno: pelicula.fechaEstreno,
-      cantidadPublico: pelicula.cantidadPublico,
-      fotoPelicula: pelicula.fotoPelicula
-    });
+  public guardar(pelicula, actor){
+      return this.db.collection('peliculas').add({
+        id: pelicula.id,
+        nombre: pelicula.nombre,
+        tipo: pelicula.tipo,
+        fechaEstreno: pelicula.fechaEstreno,
+        cantidadPublico: pelicula.cantidadPublico,
+        fotoPelicula: pelicula.fotoPelicula,
+        actor: {
+          nombre: actor.nombre
+        }
+      });
   }
 }

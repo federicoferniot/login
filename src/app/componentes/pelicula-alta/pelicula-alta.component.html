@@ -1,6 +1,11 @@
+<app-menu></app-menu>
+
 <body class="bg-light">
 
-    <div class="container">
+    <div *ngIf="cargando" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div *ngIf="!cargando" class="container">
         <div class="py-5 text-center">
             <h2>Alta película</h2>
         </div>
@@ -16,33 +21,36 @@
             </div>
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Datos Película</h4>
-                    <div class="mb-3">
-                        <label for="username">Nombre</label>
-                        <div >
-                            <input type="text" [(ngModel)]="nombre" id="nombre" placeholder="Nombre" required>
-                        </div>
+                <div class="mb-3">
+                    <label for="username">Nombre</label>
+                    <div>
+                        <input type="text" [(ngModel)]="nombre" id="nombre" placeholder="Nombre" required>
                     </div>
+                </div>
 
-                    <div class="mb-3">
-                        <label for="username">Tipo</label>
-                        <div >
-                            <input type="text" [(ngModel)]="tipo" id="tipo" placeholder="Animada" required>
-                        </div>
+                <div class="mb-3">
+                    <label for="username">Tipo</label>
+                    <div>
+                        <input type="text" [(ngModel)]="tipo" id="tipo" placeholder="Animada" required>
                     </div>
+                </div>
 
-                    <div class="mb-3">
-                        <label for="username">Fecha de estreno</label>
-                        <div >
-                            <input type="date"[(ngModel)]="fechaEstreno" id="fechaEstreno" placeholder="DD/MM/AAAA" required>
-                        </div>
+                <div class="mb-3">
+                    <label for="username">Fecha de estreno</label>
+                    <div>
+                        <input type="date" [(ngModel)]="fechaEstreno" id="fechaEstreno" placeholder="DD/MM/AAAA"
+                            required>
                     </div>
-                    <div class="mb-3">
-                        <label for="username">Cantidad de público</label>
-                        <div >
-                            <input type="number" [(ngModel)]="cantidadPublico" id="username" placeholder="Cantidad" required>
-                        </div>
+                </div>
+                <div class="mb-3">
+                    <label for="username">Cantidad de público</label>
+                    <div>
+                        <input type="number" [(ngModel)]="cantidadPublico" id="username" placeholder="Cantidad"
+                            required>
                     </div>
-                    <button class="btn btn-primary btn-lg btn-block" (click)="guardar()" type="submit">Guardar Película</button>
+                </div>
+                <button class="btn btn-primary btn-lg btn-block" [disabled]="!habilitado()" (click)="guardar()"
+                    type="submit">Guardar Película</button>
             </div>
         </div>
     </div>
