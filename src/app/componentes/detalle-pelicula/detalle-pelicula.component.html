@@ -4,3 +4,4 @@
 <p>{{pelicula.fechaEstreno}}</p>
 <p>{{pelicula.cantidadPublico}}</p>
 <p><img [src]="pelicula.fotoPelicula"></p>
+<p><button *ngIf="borrado == 1" (click)="borrar()">Borrar</button></p>

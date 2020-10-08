@@ -8,10 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DetallePeliculaComponent implements OnInit {
 
   @Input() pelicula;
+  @Input() borrado;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  borrar(){
+    console.log(this.pelicula);
   }
 
 }

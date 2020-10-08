@@ -11,4 +11,17 @@ export class ActoresService {
   public obtenerActores(){
     return this.db.collection('actores').get();
   }
+
+  public guardar(actor){
+    return this.db.collection('actores').add(
+      {
+        nombre: actor.nombre,
+        apellido: actor.apellido,
+        foto: null,
+        fechaNacimiento: actor.fechaNacimiento,
+        sexo: actor.sexo,
+        nacionalidad: actor.nacionalidad
+      }
+    )
+  }
 }

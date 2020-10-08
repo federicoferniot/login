@@ -1,3 +1,4 @@
 <li *ngFor="let actor of actores">
     <img [src]="actor.foto" (click)="seleccionar(actor)">
 </li>
+<label *ngIf="actorSelect">{{actorSelect.nombre}}</label>

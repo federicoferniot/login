@@ -22,6 +22,7 @@ import { TablaPeliculaComponent } from './componentes/tabla-pelicula/tabla-pelic
 import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
 import { TablaActorComponent } from './componentes/tabla-actor/tabla-actor.component';
 import { MenuComponent } from './componentes/menu/menu.component';
+import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';
 
 var config = {
   apiKey: "AIzaSyDrLUL-SiiyAvn2pppCY_GZfiLgahSGtUY",
@@ -45,7 +46,8 @@ var config = {
     TablaPeliculaComponent,
     DetallePeliculaComponent,
     TablaActorComponent,
-    MenuComponent
+    MenuComponent,
+    TablaPaisesComponent
   ],
   imports: [
     BrowserModule,

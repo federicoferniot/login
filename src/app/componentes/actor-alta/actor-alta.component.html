@@ -1,1 +1,56 @@
-<p>actor-alta works!</p>
+<app-menu></app-menu>
+
+<body class="bg-light">
+
+    <div *ngIf="cargando" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div *ngIf="!cargando" class="container">
+        <div class="py-5 text-center">
+            <h2>Alta Actor</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Seleccionar Nacionalidad</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <app-tabla-paises (paisSeleccion)="seleccionarNacionalidad($event)"></app-tabla-paises>
+                </ul>
+            </div>
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Datos Actor</h4>
+                <div class="mb-3">
+                    <label>Nombre</label>
+                    <div>
+                        <input type="text" [(ngModel)]="nombre" id="nombre" placeholder="Nombre" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label>Apellido</label>
+                    <div>
+                        <input type="text" [(ngModel)]="apellido" id="apellido" placeholder="Apellido" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label >Sexo</label>
+                    <div>
+                        <input type="text" [(ngModel)]="sexo" id="sexo" placeholder="Masculino" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label >Fecha de nacimiento</label>
+                    <div>
+                        <input type="date" [(ngModel)]="fechaNacimiento" id="fechaNacimiento" placeholder="DD/MM/AAAA"
+                            required>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-lg btn-block" [disabled]="!habilitado()" (click)="guardar()"
+                    type="submit">Guardar Actor</button>
+            </div>
+        </div>
+    </div>
+</body>

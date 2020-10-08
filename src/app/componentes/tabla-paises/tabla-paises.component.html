@@ -1,0 +1,4 @@
+<li *ngFor="let pais of paises">
+    <img [src]="pais.flag" (click)="seleccionar(pais)">
+</li>
+<label *ngIf="paisSeleccionado">{{paisSeleccionado.name}}</label>

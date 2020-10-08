@@ -16,7 +16,7 @@ export class BusquedaComponent implements OnInit {
     this.peliculasService.obtenerPeliculas().subscribe((resultados)=>{
       let lista = [];
       resultados.forEach((pelicula)=>{
-        lista.push(new Pelicula(pelicula.data().id, pelicula.data().nombre, pelicula.data().tipo, pelicula.data().fechaEstreno, pelicula.data().cantidadPublico, pelicula.data().fotoPelicula));
+        lista.push(new Pelicula(pelicula.id, pelicula.data().nombre, pelicula.data().tipo, pelicula.data().fechaEstreno, pelicula.data().cantidadPublico, pelicula.data().fotoPelicula));
       })
       this.listaPeliculas = lista;
     })

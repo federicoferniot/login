@@ -9,6 +9,7 @@ import { Actor } from 'src/app/clases/actor'
 })
 export class TablaActorComponent implements OnInit {
   public actores;
+  public actorSelect;
 
   @Output() actorSeleccionado: EventEmitter<any> = new EventEmitter<any>();
 
@@ -16,7 +17,7 @@ export class TablaActorComponent implements OnInit {
     let list = [];
     this.actoresService.obtenerActores().subscribe((resultado)=>{
       resultado.forEach((actor)=>{
-        list.push(new Actor(actor.data().id, actor.data().nombre, actor.data().apellido, actor.data().sexo, actor.data().fechaNacimiento, actor.data().foto));
+        list.push(new Actor(actor.id, actor.data().nombre, actor.data().apellido, actor.data().sexo, actor.data().fechaNacimiento, actor.data().foto, actor.data().nacionalidad));
       });
       this.actores = list;
     });
@@ -26,6 +27,7 @@ export class TablaActorComponent implements OnInit {
   }
 
   seleccionar(actor){
+    this.actorSelect = actor;
     this.actorSeleccionado.emit(actor);
   }
 
