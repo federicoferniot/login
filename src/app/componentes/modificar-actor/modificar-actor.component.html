@@ -1,0 +1,17 @@
+<h2><input [value]="actor.nombre" [(ngModel)]="nombre"></h2>
+<p><input [value]="actor.apellido" [(ngModel)]="apellido"></p>
+<p> <select [(ngModel)]="sexo" id="sexo">
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+    </select></p>
+<p> <input type="date" [(ngModel)]="fechaNacimiento" id="fechaNacimiento" placeholder="DD/MM/AAAA" required></p>
+<div class="col-md-4 order-md-2 mb-4">
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Nacionalidad</span>
+    </h4>
+    <ul class="list-group mb-3">
+        <app-tabla-paises (paisSeleccion)="seleccionarNacionalidad($event)"></app-tabla-paises>
+    </ul>
+</div>
+<p>{{nacionalidad}}</p>
+<p><a class="btn btn-secondary" (click)="editar()" role="button">Editar &raquo;</a></p>

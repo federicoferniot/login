@@ -23,6 +23,9 @@ import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle
 import { TablaActorComponent } from './componentes/tabla-actor/tabla-actor.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.component';
+import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component';
+import { BorrarActorComponent } from './componentes/borrar-actor/borrar-actor.component';
+import { ModificarActorComponent } from './componentes/modificar-actor/modificar-actor.component';
 
 var config = {
   apiKey: "AIzaSyDrLUL-SiiyAvn2pppCY_GZfiLgahSGtUY",
@@ -47,7 +50,10 @@ var config = {
     DetallePeliculaComponent,
     TablaActorComponent,
     MenuComponent,
-    TablaPaisesComponent
+    TablaPaisesComponent,
+    DetalleActorComponent,
+    BorrarActorComponent,
+    ModificarActorComponent
   ],
   imports: [
     BrowserModule,

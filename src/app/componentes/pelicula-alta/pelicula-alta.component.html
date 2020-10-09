@@ -16,7 +16,7 @@
                     <span class="text-muted">Seleccionar Actor</span>
                 </h4>
                 <ul class="list-group mb-3">
-                    <app-tabla-actor (actorSeleccionado)="seleccionarActor($event)"></app-tabla-actor>
+                    <app-tabla-actor [list]="actores" [soloFotos]=true (actorSeleccionado)="seleccionarActor($event)"></app-tabla-actor>
                 </ul>
             </div>
             <div class="col-md-8 order-md-1">

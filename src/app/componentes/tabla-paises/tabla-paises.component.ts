@@ -15,7 +15,7 @@ export class TablaPaisesComponent implements OnInit {
   constructor(private paisesService: PaisesService) {
     this.paisesService.getPaises().subscribe((resultado: any)=>{
       
-      this.paises = resultado.slice(0, 6);
+      this.paises = resultado.slice(0, 10);
     })
   }
 

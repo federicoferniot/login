@@ -24,4 +24,18 @@ export class ActoresService {
       }
     )
   }
+
+  public borrar(actor){
+    return this.db.collection('actores').doc(actor.id).delete();
+  }
+
+  public editar(actor){
+    return this.db.collection('actores').doc(actor.id).set({
+      nombre: actor.nombre,
+      apellido: actor.apellido,
+      fechaNacimiento: actor.fechaNacimiento,
+      sexo: actor.sexo,
+      nacionalidad: actor.nacionalidad
+    }, {merge: true});
+  }
 }

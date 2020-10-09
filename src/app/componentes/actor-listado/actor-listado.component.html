@@ -1,1 +1,23 @@
-<p>actor-listado works!</p>
+<app-menu></app-menu>
+<div class="container margin">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4">
+            <app-borrar-actor (borrarActor)="borrar($event)" *ngIf="actorParaBorrar" [actor]="actorParaBorrar"></app-borrar-actor>
+        </div>
+
+        <div class="col-md-4">
+            <app-detalle-actor (limpiarActor)="limpiar($event)" *ngIf="actorParaMostrar" [actor]="actorParaMostrar"></app-detalle-actor>
+        </div>
+        <div class="col-md-4">
+            <app-modificar-actor (editarActor)="editar($event)" *ngIf="actorParaEditar" [actor]="actorParaEditar"></app-modificar-actor>
+        </div>
+    </div>
+
+    <hr>
+
+</div> <!-- /container -->
+<div class="jumbotron">
+    <app-tabla-actor [list]="actores" (actorBorrar)="prepararBorrar($event)" (actorEditar)="prepararEditar($event)" (actorVer)="prepararVer($event)" [soloFotos]=false></app-tabla-actor>
+</div>
+

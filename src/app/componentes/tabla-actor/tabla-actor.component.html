@@ -1,4 +1,30 @@
-<li *ngFor="let actor of actores">
-    <img [src]="actor.foto" (click)="seleccionar(actor)">
-</li>
-<label *ngIf="actorSelect">{{actorSelect.nombre}}</label>
+<div *ngIf="soloFotos">
+    <li *ngFor="let actor of list">
+        <img [src]="actor.foto" (click)="seleccionar(actor)">
+    </li>
+    <label *ngIf="actorSelect">{{actorSelect.nombre}}</label>
+</div>
+<div *ngIf="!soloFotos">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Nacionalidad</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let actor of list">
+                <td>{{actor.id}}</td>
+                <td>{{actor.nombre}}</td>
+                <td>{{actor.apellido}}</td>
+                <td>{{actor.sexo}}</td>
+                <td>{{actor.nacionalidad}}</td>
+                <td><button (click)="borrar(actor)">Borrar</button><button (click)="ver(actor)">Ver</button><button (click)="editar(actor)">Editar</button></td>
+            </tr>
+        </tbody>
+      </table>
+</div>

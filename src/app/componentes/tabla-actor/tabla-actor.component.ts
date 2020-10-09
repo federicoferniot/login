@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActoresService } from 'src/app/servicios/actores.service'
 import { Actor } from 'src/app/clases/actor'
 
@@ -11,16 +11,16 @@ export class TablaActorComponent implements OnInit {
   public actores;
   public actorSelect;
 
-  @Output() actorSeleccionado: EventEmitter<any> = new EventEmitter<any>();
+  @Input() list;
 
-  constructor(private actoresService: ActoresService) {
-    let list = [];
-    this.actoresService.obtenerActores().subscribe((resultado)=>{
-      resultado.forEach((actor)=>{
-        list.push(new Actor(actor.id, actor.data().nombre, actor.data().apellido, actor.data().sexo, actor.data().fechaNacimiento, actor.data().foto, actor.data().nacionalidad));
-      });
-      this.actores = list;
-    });
+  @Input() soloFotos;
+
+  @Output() actorSeleccionado: EventEmitter<any> = new EventEmitter<any>();
+  @Output() actorBorrar: EventEmitter<any> = new EventEmitter<any>();
+  @Output() actorEditar: EventEmitter<any> = new EventEmitter<any>();
+  @Output() actorVer: EventEmitter<any> = new EventEmitter<any>();
+
+  constructor() {
    }
 
   ngOnInit(): void {
@@ -29,6 +29,18 @@ export class TablaActorComponent implements OnInit {
   seleccionar(actor){
     this.actorSelect = actor;
     this.actorSeleccionado.emit(actor);
+  }
+
+  borrar(actor){
+    this.actorBorrar.emit(actor);
+  }
+
+  ver(actor) {
+    this.actorVer.emit(actor);
+  }
+
+  editar(actor) {
+    this.actorEditar.emit(actor);
   }
 
 }
