@@ -15,10 +15,14 @@ export class TablaActorComponent implements OnInit {
 
   @Input() soloFotos;
 
+  @Input() abm;
+
   @Output() actorSeleccionado: EventEmitter<any> = new EventEmitter<any>();
   @Output() actorBorrar: EventEmitter<any> = new EventEmitter<any>();
   @Output() actorEditar: EventEmitter<any> = new EventEmitter<any>();
   @Output() actorVer: EventEmitter<any> = new EventEmitter<any>();
+  @Output() actorPeliculas: EventEmitter<any> = new EventEmitter<any>();
+  @Output() actorPais: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
    }
@@ -37,6 +41,14 @@ export class TablaActorComponent implements OnInit {
 
   ver(actor) {
     this.actorVer.emit(actor);
+  }
+
+  verPeliculas(actor){
+    this.actorPeliculas.emit(actor);
+  }
+
+  verPais(actor){
+    this.actorPais.emit(actor);
   }
 
   editar(actor) {

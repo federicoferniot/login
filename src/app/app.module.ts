@@ -26,15 +26,18 @@ import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.co
 import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component';
 import { BorrarActorComponent } from './componentes/borrar-actor/borrar-actor.component';
 import { ModificarActorComponent } from './componentes/modificar-actor/modificar-actor.component';
+import { ActorPeliculaComponent } from './componentes/actor-pelicula/actor-pelicula.component';
+import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.component';
 
 var config = {
-  apiKey: "AIzaSyDrLUL-SiiyAvn2pppCY_GZfiLgahSGtUY",
-  authDomain: "pruebaapp-cdfc4.firebaseapp.com",
-  databaseURL: "https://pruebaapp-cdfc4.firebaseio.com",
-  projectId: "pruebaapp-cdfc4",
-  storageBucket: "pruebaapp-cdfc4.appspot.com",
-  messagingSenderId: "351570567450",
-  appId: "1:351570567450:web:6c03fcc1c2a45a5a05cca3"
+  apiKey: "AIzaSyBiKzSepiaRmxKeWDaHNBL5b2AzFsLxru0",
+  authDomain: "parcial-53ff2.firebaseapp.com",
+  databaseURL: "https://parcial-53ff2.firebaseio.com",
+  projectId: "parcial-53ff2",
+  storageBucket: "parcial-53ff2.appspot.com",
+  messagingSenderId: "441030658460",
+  appId: "1:441030658460:web:511abb257137090c106059"
+
 };
 
 @NgModule({
@@ -53,7 +56,9 @@ var config = {
     TablaPaisesComponent,
     DetalleActorComponent,
     BorrarActorComponent,
-    ModificarActorComponent
+    ModificarActorComponent,
+    ActorPeliculaComponent,
+    DetallePaisComponent
   ],
   imports: [
     BrowserModule,

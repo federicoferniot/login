@@ -1,7 +1,7 @@
 <div class="container">
     <h1 class="display-3">Listado</h1>
 </div>
-<div class="container">
+<div *ngIf="!reducida" class="container">
     <table class="table" *ngIf="list">
         <thead>
           <tr>
@@ -26,4 +26,20 @@
             </tr>
         </tbody>
       </table>
+</div>
+<div *ngIf="reducida" class="container">
+  <table class="table" *ngIf="list">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Foto</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let pelicula of list">
+              <td>{{pelicula.nombre}}</td>
+              <td><img [src]="pelicula.fotoPelicula"></td>
+          </tr>
+      </tbody>
+    </table>
 </div>
