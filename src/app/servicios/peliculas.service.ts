@@ -20,9 +20,7 @@ export class PeliculasService {
         fechaEstreno: pelicula.fechaEstreno,
         cantidadPublico: pelicula.cantidadPublico,
         fotoPelicula: pelicula.fotoPelicula,
-        actor: {
-          nombre: actor.nombre
-        }
+        actor: actor.id
       });
   }
 }
