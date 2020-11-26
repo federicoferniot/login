@@ -18,6 +18,7 @@ export class PeliculaAltaComponent implements OnInit {
   public cargando = false;
   public actor;
   public actores;
+  public origen;
 
   constructor(private peliculaService: PeliculasService, private router: Router, private actoresService: ActoresService) {
     let list = [];
@@ -45,7 +46,7 @@ export class PeliculaAltaComponent implements OnInit {
         resultado.forEach((pelicula)=>{
           max = Math.max(pelicula.data().id, max);
         })
-        let pelicula = new Pelicula(max+1, this.nombre, this.tipo, this.fechaEstreno, this.cantidadPublico, null);
+        let pelicula = new Pelicula(max+1, this.nombre, this.tipo, this.fechaEstreno, this.cantidadPublico, null, this.origen);
         this.peliculaService.guardar(pelicula, this.actor).then(()=>{
           this.cargando = false;
           this.router.navigate(['/búsqueda'])
@@ -55,7 +56,11 @@ export class PeliculaAltaComponent implements OnInit {
   }
 
   habilitado(){
-    return (this.nombre != null && this.tipo != null && this.fechaEstreno != null && this.cantidadPublico !=null && this.actor != null);
+    return (this.nombre != null && this.tipo != null && this.fechaEstreno != null && this.cantidadPublico !=null && this.actor != null && this.origen != null);
+  }
+
+  origenSeleccionado(pais){
+    this.origen = pais;
   }
 
 }

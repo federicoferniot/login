@@ -28,6 +28,7 @@ import { BorrarActorComponent } from './componentes/borrar-actor/borrar-actor.co
 import { ModificarActorComponent } from './componentes/modificar-actor/modificar-actor.component';
 import { ActorPeliculaComponent } from './componentes/actor-pelicula/actor-pelicula.component';
 import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.component';
+import { PaisPeliculaComponent } from './componentes/pais-pelicula/pais-pelicula.component';
 
 var config = {
   apiKey: "AIzaSyBiKzSepiaRmxKeWDaHNBL5b2AzFsLxru0",
@@ -58,7 +59,8 @@ var config = {
     BorrarActorComponent,
     ModificarActorComponent,
     ActorPeliculaComponent,
-    DetallePaisComponent
+    DetallePaisComponent,
+    PaisPeliculaComponent
   ],
   imports: [
     BrowserModule,

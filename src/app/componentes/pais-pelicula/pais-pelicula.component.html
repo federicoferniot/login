@@ -1,0 +1,22 @@
+<app-menu></app-menu>
+<div class="container margin">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-3">
+            <app-tabla-pelicula [reducida]="true" *ngIf="paisPeliculas" [list]="listaPeliculas"></app-tabla-pelicula>
+        </div>
+        <div class="col-md-6 actores">
+            <app-tabla-actor [list]="listaActores" *ngIf="paisActores" [sinAcciones]="true" ></app-tabla-actor>
+        </div>
+
+        <div class="col-md-3">
+            <app-detalle-pais *ngIf="paisDetalle" [pais]="paisDetalle"></app-detalle-pais>
+        </div>
+    </div>
+
+    <hr>
+
+</div> <!-- /container -->
+<div class="jumbotron">
+    <app-tabla-paises [listado]="true" (peliculas)="verPeliculas($event)" (actores)="verActores($event)" (detalle)="verDetalle($event)"></app-tabla-paises>
+</div>

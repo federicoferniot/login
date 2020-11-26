@@ -8,23 +8,21 @@
     <table class="table">
         <thead>
           <tr>
-            <th scope="col">Id</th>
             <th scope="col">Nombre</th>
             <th scope="col">Apellido</th>
             <th scope="col">Sexo</th>
             <th scope="col">Nacionalidad</th>
-            <th scope="col">Acciones</th>
+            <th *ngIf="!sinAcciones" scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
             <tr *ngFor="let actor of list">
-                <td>{{actor.id}}</td>
                 <td>{{actor.nombre}}</td>
                 <td>{{actor.apellido}}</td>
                 <td>{{actor.sexo}}</td>
                 <td>{{actor.nacionalidad}}</td>
-                <td *ngIf="!abm"><button (click)="verPeliculas(actor)">Peliculas</button><button (click)="verPais(actor)">País</button><button (click)="ver(actor)">Detalle</button></td>
-                <td *ngIf="abm"><button (click)="borrar(actor)">Borrar</button><button (click)="ver(actor)">Ver</button><button (click)="editar(actor)">Editar</button></td>
+                <td *ngIf="!abm && !sinAcciones"><button (click)="verPeliculas(actor)">Peliculas</button><button (click)="verPais(actor)">País</button><button (click)="ver(actor)">Detalle</button></td>
+                <td *ngIf="abm && !sinAcciones"><button (click)="borrar(actor)">Borrar</button><button (click)="ver(actor)">Ver</button><button (click)="editar(actor)">Editar</button></td>
             </tr>
         </tbody>
       </table>

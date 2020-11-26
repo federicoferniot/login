@@ -17,7 +17,7 @@ export class PeliculasListadoComponent implements OnInit {
     this.peliculasService.obtenerPeliculas().subscribe((resultados)=>{
       let lista = [];
       resultados.forEach((pelicula)=>{
-        lista.push(new Pelicula(pelicula.id, pelicula.data().nombre, pelicula.data().tipo, pelicula.data().fechaEstreno, pelicula.data().cantidadPublico, pelicula.data().fotoPelicula));
+        lista.push(new Pelicula(pelicula.id, pelicula.data().nombre, pelicula.data().tipo, pelicula.data().fechaEstreno, pelicula.data().cantidadPublico, pelicula.data().fotoPelicula, pelicula.data().origen));
       })
       this.listaPeliculas = lista;
     })

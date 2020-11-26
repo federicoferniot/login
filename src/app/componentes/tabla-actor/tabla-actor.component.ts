@@ -17,6 +17,8 @@ export class TablaActorComponent implements OnInit {
 
   @Input() abm;
 
+  @Input() sinAcciones;
+
   @Output() actorSeleccionado: EventEmitter<any> = new EventEmitter<any>();
   @Output() actorBorrar: EventEmitter<any> = new EventEmitter<any>();
   @Output() actorEditar: EventEmitter<any> = new EventEmitter<any>();

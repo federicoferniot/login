@@ -1,6 +1,25 @@
-<div>
-    <li *ngFor="let pais of paises">
-        <img [src]="pais.flag" (click)="seleccionar(pais)">
-    </li>
+<div *ngIf="!listado">
+    <div class="alta">
+        <li *ngFor="let pais of paises">
+            <img [src]="pais.flag" (click)="seleccionar(pais)">
+        </li>
+    </div>
+    <label *ngIf="paisSeleccionado">{{paisSeleccionado.name}}</label>
 </div>
-<label *ngIf="paisSeleccionado">{{paisSeleccionado.name}}</label>
+<div *ngIf="listado">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pais of paises">
+                <td>{{pais.name}}</td>
+                <td><button (click)="verPeliculas(pais)">Peliculas</button><button (click)="verActores(pais)">Actores</button><button (click)="verDetalle(pais)">Detalle</button></td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+

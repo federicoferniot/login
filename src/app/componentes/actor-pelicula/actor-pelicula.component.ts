@@ -55,7 +55,7 @@ export class ActorPeliculaComponent implements OnInit {
       let lista = [];
       resultados.forEach((pelicula)=>{
         if(actor.id == pelicula.data().actor){
-          lista.push(new Pelicula(pelicula.id, pelicula.data().nombre, pelicula.data().tipo, pelicula.data().fechaEstreno, pelicula.data().cantidadPublico, pelicula.data().fotoPelicula));
+          lista.push(new Pelicula(pelicula.id, pelicula.data().nombre, pelicula.data().tipo, pelicula.data().fechaEstreno, pelicula.data().cantidadPublico, pelicula.data().fotoPelicula, pelicula.data().origen));
         }
       });
       this.actorVerPeliculas = actor;
