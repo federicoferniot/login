@@ -46,7 +46,7 @@ export class PeliculaAltaComponent implements OnInit {
         resultado.forEach((pelicula)=>{
           max = Math.max(pelicula.data().id, max);
         })
-        let pelicula = new Pelicula(max+1, this.nombre, this.tipo, this.fechaEstreno, this.cantidadPublico, null, this.origen);
+        let pelicula = new Pelicula(max+1, this.nombre, this.tipo, this.fechaEstreno, this.cantidadPublico, null, this.origen.name);
         this.peliculaService.guardar(pelicula, this.actor).then(()=>{
           this.cargando = false;
           this.router.navigate(['/búsqueda'])
